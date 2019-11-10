@@ -18,7 +18,6 @@ def update_record(new_value, new_holder, place, record):
         sql = "UPDATE records SET third_place_holder = second_place_holder, third_place_value = second_place_value WHERE record_name = %s"
         val = (record,)
         mycursor.execute(sql, val)
-        mydb.commit()
 
         sql = "UPDATE records SET second_place_holder = first_place_holder, second_place_value = first_place_value WHERE record_name = %s"
         val = (record,)
