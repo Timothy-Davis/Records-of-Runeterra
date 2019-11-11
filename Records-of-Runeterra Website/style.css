@@ -1,0 +1,294 @@
+.title {
+    text-align: center;
+    font-size: 70;
+    font-family: dustismo_romanregular;
+}   
+            
+p {
+    text-align: center;
+    font-size: 20px;
+    font-family: dustismo_romanregular;
+}
+
+.twitchvidcaption {
+    font-size: 25;
+    font-family: dustimo_romanregular;
+    
+}
+            
+.caption {
+    font-size: 25px;
+    margin: 0 auto;
+    width: 90%;
+    height: 5%;
+    display: block;
+    cursor: pointer;
+    padding-top: 62%;
+    color:whitesmoke;
+    text-decoration: none;
+    font-family: dustismo_romanregular;
+    text-align: center;
+}
+
+.caption1 {
+    font-size: 25;
+    margin: 0 auto;
+    width: 90%;
+    height: 5%;
+    display: block;
+    cursor: pointer;
+    padding-top: 55%;
+    color:whitesmoke;
+    text-decoration: none;
+    font-family: dustismo_romanregular;
+}
+              
+.caption2 {
+    font-size: 25;
+    margin: 0 auto;
+    width: 90%;
+    height: 5%;
+    display: block;
+    cursor: pointer;
+    padding-top: 62%;
+    color:whitesmoke;
+    text-decoration: none;
+    font-family: dustismo_romanregular;
+}
+            
+.center {
+    background: url("Pictures/Riot challenge 1.png") no-repeat center center;
+    margin: 0 auto;
+    width: 27.66%;
+    height: 27.66%;
+    display: block;
+    cursor: pointer;    
+}
+
+.center1 {
+    background: url("Pictures/Riot challenge 2.jpg") no-repeat center center;
+    margin: 0 auto;
+    width: 31.11%;
+    height: 27.66%;
+    display: block;
+    cursor: pointer;
+}   
+
+.center2 {
+    background: url("Pictures/Riot challenge 3.png") no-repeat center center;
+    margin: 0 auto;
+    width: 27.66%;
+    height: 27.66%;
+    display: block;
+    cursor: pointer;
+}
+
+.img {
+    text-align: center;
+    margin: 0 auto;
+}
+            
+.header{
+    padding: 1;
+    text-align: center;
+    background: url("Pictures/title_bar_img.jpg");
+    color: whitesmoke;
+    font-size: 30px;
+    margin-top:-20px;
+    margin-left: -15%;
+    margin-right: -15%;
+}
+            
+body, html {
+    margin-bottom: 10%;
+    margin: 0px;
+    background: url(Pictures/lightBG.jpg);
+    overflow-x: hidden;
+}   
+            
+a:visited, a:link, a:active {
+    text-decoration: none
+}
+            
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: whitesmoke;
+}
+            
+.container {
+    width: 85%;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    background: url(Pictures/darkBG.jpg);
+}
+
+ul {
+}
+
+li {
+    display: inline;
+    font-family: dustismo_romanregular;
+}
+
+li a{
+    color: whitesmoke;
+    font-size: 30px;
+    padding: 18px
+}
+
+li a:visited, li a:link {
+    text-decoration: none;
+}
+
+li a:hover{
+    background-color:#1f1f1f;
+}
+
+.nohov:hover{
+    background-color: black;
+    border-color: whitesmoke;
+    border-style:outset;
+    border-width: thick;
+}
+
+@font-face {
+    font-family: 'KnightsQuest';
+    src: url('Fonts/KnightsQuest.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dustismo_romanregular';
+    src: url('Fonts/dustismo_roman.woff2') format('woff2'),
+         url('Fonts/dustismo_roman.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.test{
+    font-size: 25px;
+    width: 22.5%;
+    cursor: pointer;
+    color:whitesmoke;
+    text-decoration: none;
+    font-family: dustismo_romanregular;
+    float: right;
+    margin-right:70px;
+    margin-top: -70px;
+    margin-bottom: 30px;
+    pointer-events: none;
+}
+
+.twitchcaption {
+    font-size: 25;
+    height: 25;
+    width: 290
+    cursor: pointer;
+    color:whitesmoke;
+    text-decoration: none;
+    font-family: dustismo_romanregular;
+    text-align: center;
+}
+
+.test:nth-child(odd) {clear: right;}
+.test:nth-child(even) {clear: right;}
+
+.stream{
+    padding-bottom: 90px;
+    pointer-events: none;
+}
+
+.Records{
+    float: left;
+    width: 22.5%;
+    cursor: pointer;
+    margin-left:70px;
+    margin-top: -70px;
+    margin-bottom: 30px;
+    pointer-events: none;
+    padding-bottom: 90px;
+    color: whitesmoke
+}
+
+.recordTitle {
+    display: block;
+    text-align: center;
+    font-family: dustismo_romanregular;
+    pointer-events: auto;
+    color: whitesmoke;
+    font-size: 25px;
+}
+
+.holder{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 20px;
+    display: block;
+    font-family: KnightsQuest;
+    pointer-events: auto;
+}
+
+.one {
+    color: gold;
+}
+
+.two {
+    color: silver;
+}
+
+.three {
+    color: darkorange;
+}
+
+.forum{
+    text-align: center;
+    padding: inherit;
+}
+
+.nav{
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 17px;
+    margin-top: 0px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    margin-left: -15%;
+    margin-right: -15%;
+}
+
+.footer{
+    font-size: 12;
+    margin: auto;
+    display: block;
+    color:whitesmoke;
+    text-decoration: none;
+    font-family: dustismo_romanregular;
+    pointer-events: none;
+    text-align: center;
+    width: 100%;
+    background: url(Pictures/lightBG.jpg);
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
