@@ -31,7 +31,7 @@ def poll_active_deck():
         return active_deck_data
 
 
-def poll_postitional_rectangles():
+def poll_positional_rectangles():
     with urllib.request.urlopen(POSITIONAL_RECTANGLE_URL) as url:
         positional_rectangle_data = json.loads(url.read().decode())
         return positional_rectangle_data
