@@ -68,7 +68,7 @@ def update_user(user_name, parameter):
     database.close()
 
 
-def search_cards(user_name):
+def search_users(user_name):
     database = connect_to_db()
     my_cursor = database.cursor()
 
