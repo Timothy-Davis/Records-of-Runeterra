@@ -76,7 +76,7 @@ def search_cards(user_name):
     values = (user_name,)
     my_cursor.execute(sql, values)
 
-    if my_cursor.rowcount != 0:
+    if my_cursor.rowcount != -1:
         return True
     else:
         return False
@@ -135,7 +135,7 @@ def search_cards(card_id):
     values = (card_id,)
     my_cursor.execute(sql, values)
 
-    if my_cursor.rowcount != 0:
+    if my_cursor.rowcount != -1:
         return True
     else:
         return False
@@ -185,7 +185,7 @@ def search_decks(deck_code):
     values = (deck_code,)
     my_cursor.execute(sql, values)
 
-    if my_cursor.rowcount != 0:
+    if my_cursor.rowcount != -1:
         return True
     else:
         return False
