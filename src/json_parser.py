@@ -33,7 +33,7 @@ def check_game_state():
             dbUpdate.add_user(summoner)
         print(summoner, deck_code)
         while jsonFetcher.poll_active_deck()['DeckCode'] is not None:
-            time.sleep()
+            time.sleep(1)
 
     if deck_code is not None and summoner is not None:
         print("post game")
@@ -54,5 +54,4 @@ def check_game_state():
 
 
 if __name__ == "__main__":
-    add_all_cards()
     check_game_state()
