@@ -70,12 +70,12 @@ def update_user(user_name, parameter):
 
 # ### CARDS ### #
 # Call the following function to add cards to the database.
-def add_card(card_id, card_name):
+def add_card(card_id, card_name, card_type):
     database = connect_to_db()
     my_cursor = database.cursor()
 
-    sql = "INSERT INTO ror_cards(cardID, cardName, gamesPlayed, gamesWon, expeditionGames, expeditionWins) " \
-          "VALUES (%s, %s, 0, 0, 0, 0)"
+    sql = "INSERT INTO ror_cards(cardID, cardName, gamesPlayed, cardType, gamesWon, expeditionGames, expeditionWins) " \
+          "VALUES (%s, %s, %s, 0, 0, 0, 0)"
     values = (card_id, card_name)
     my_cursor.execute(sql, values)
 
