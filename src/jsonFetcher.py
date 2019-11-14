@@ -2,8 +2,9 @@ import json
 import urllib.request
 
 GAME_RESULT_URL = "http://localhost:21337/game-result"
-ACTIVE_DECK_URL = "http://localhost:21337/active-deck"
-EXPEDITIONS_STATE_URL = "http://localhost:21337/active-deck"
+ACTIVE_DECK_URL = "http://localhost:21337/static-decklist"
+EXPEDITIONS_STATE_URL = "http://localhost:21337/expeditions-state"
+POSITIONAL_RECTANGLE_URL = "http://localhost:21337/positional-rectangles"
 
 """
     Until Legends of Runeterra is re-released, we have no way of polling the 
@@ -28,6 +29,12 @@ def poll_active_deck():
     with urllib.request.urlopen(ACTIVE_DECK_URL) as url:
         active_deck_data = json.loads(url.read().decode())
         return active_deck_data
+
+
+def poll_positional_rectangles():
+    with urllib.request.urlopen(POSITIONAL_RECTANGLE_URL) as url:
+        positional_rectangle_data = json.loads(url.read().decode())
+        return positional_rectangle_data
 
 
 def poll_expeditions_state():
