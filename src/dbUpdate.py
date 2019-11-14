@@ -68,6 +68,20 @@ def update_user(user_name, parameter):
     database.close()
 
 
+def search_cards(user_name):
+    database = connect_to_db()
+    my_cursor = database.cursor()
+
+    sql = "SELECT summonerName FROM ror_users WHERE summonerName = %s"
+    values = (user_name,)
+    my_cursor.execute(sql, values)
+
+    if my_cursor.rowcount != 0:
+        return True
+    else:
+        return False
+
+
 # ### CARDS ### #
 # Call the following function to add cards to the database.
 def add_card(card_id, card_name, card_type):
@@ -112,6 +126,21 @@ def update_card(card_id, parameter):
     database.close()
 
 
+# Call the following function to search for a user
+def search_cards(card_id):
+    database = connect_to_db()
+    my_cursor = database.cursor()
+
+    sql = "SELECT cardID FROM ror_cards WHERE cardID = %s"
+    values = (card_id,)
+    my_cursor.execute(sql, values)
+
+    if my_cursor.rowcount != 0:
+        return True
+    else:
+        return False
+
+
 # ### DECKS ### #
 # Call teh following function to add a deck to the database.
 def add_deck(deck_code):
@@ -146,3 +175,17 @@ def update_deck(deck_code, parameter):
 
     database.commit()
     database.close()
+
+
+def search_decks(deck_code):
+    database = connect_to_db()
+    my_cursor = database.cursor()
+
+    sql = "SELECT deckString FROM ror_decks WHERE deckString = %s"
+    values = (deck_code,)
+    my_cursor.execute(sql, values)
+
+    if my_cursor.rowcount != 0:
+        return True
+    else:
+        return False
