@@ -90,7 +90,7 @@ def add_card(card_id, card_name, card_type):
 
     sql = "INSERT INTO ror_cards(cardID, cardName, gamesPlayed, cardType, gamesWon, expeditionGames, expeditionWins) " \
           "VALUES (%s, %s, %s, 0, 0, 0, 0)"
-    values = (card_id, card_name)
+    values = (card_id, card_name, card_type)
     my_cursor.execute(sql, values)
 
     database.commit()
