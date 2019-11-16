@@ -23,7 +23,7 @@ def add_user(new_user):
     database = connect_to_db()
     my_cursor = database.cursor()
 
-    sql = "INSERT INTO ror_users(summonerName, wins, totalGames, longest_expedition," \
+    sql = "INSERT INTO ror_users(summonerName, total_wins, totalGames, longest_expedition," \
           "most_consecutive_expedition_wins, expedition_wins, expedition_games) VALUES (%s, 0, 0, 0, 0, 0, 0)"
     values = (new_user,)
     my_cursor.execute(sql, values)
@@ -38,7 +38,7 @@ def update_user(user_name, parameter):
     my_cursor = database.cursor()
 
     if parameter == "wins":
-        sql = "UPDATE ror_users SET wins = wins+1, totalGames = totalGames+1 WHERE summonerName = %s"
+        sql = "UPDATE ror_users SET total_wins = total_wins+1, totalGames = totalGames+1 WHERE summonerName = %s"
 
     elif parameter == "longest_expedition":
         sql = "UPDATE ror_users SET longest_expedition = longest_expedition+1 WHERE summonerName = %s"
