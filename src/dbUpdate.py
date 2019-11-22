@@ -90,7 +90,7 @@ def add_card(card_id, card_name, card_type):
     my_cursor = database.cursor()
 
     sql = "INSERT INTO ror_cards(cardID, cardName, gamesPlayed, cardType, gamesWon, expeditionGames, expeditionWins, " \
-          "win_rate) VALUES (%s, %s, %s, 0, 0, 0, 0, 0)"
+          "win_rate, play_rate) VALUES (%s, %s, %s, 0, 0, 0, 0, 0, 0)"
     values = (card_id, card_name, card_type)
     my_cursor.execute(sql, values)
 
@@ -148,7 +148,7 @@ def add_deck(deck_code):
     database = connect_to_db()
     my_cursor = database.cursor()
 
-    sql = "INSERT INTO ror_decks(deckString, wins, totalGames, win_rate) VALUES (%s, 0, 0, 0)"
+    sql = "INSERT INTO ror_decks(deckString, wins, totalGames, win_rate, play_rate) VALUES (%s, 0, 0, 0, 0)"
     values = (deck_code,)
     my_cursor.execute(sql, values)
 
@@ -229,6 +229,27 @@ def update_winrate():
     for row in result:
         print(row)
 
+
+def update_playrate():
+    total_games = 0;
+    database = connect_to_db()
+    my_cursor = database.cursor()
+
+    my_cursor.execute("SELECT * FROM ror_decks")
+    result = my_cursor.fetchall()
+    for row in result:
+        total_games += row[2]
+
+    for row in result:
+        plays = row[2]
+        if plays!=0:
+            my_cursor.execute("UPDATE ror_decks SET play_rate = %s", (plays/total_games),)
+    my_cursor.execute("SELECT * FROM ror_cards")
+    result = my_cursor.fetchall()
+    for row in result:
+        plays = row[3]
+        if plays != 0:
+            my_cursor.execute("UPDATE ror_cards SET play_rate = %s", (plays/total_games),)
 
 if __name__ == "__main__":
     update_winrate()
