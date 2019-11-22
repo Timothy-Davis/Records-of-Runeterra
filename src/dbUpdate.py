@@ -1,4 +1,5 @@
 import mysql.connector
+import json
 
 # #### Constants #### #
 HOST = "localhost"
@@ -189,3 +190,16 @@ def search_decks(deck_code):
         return True
     else:
         return False
+
+
+def check_cards():
+    database = connect_to_db()
+    my_cursor = database.cursor()
+
+    my_cursor.execute("DELETE FROM cards")
+
+    card_json = open('C:/datadragon-set1-en_us/en_us/data/set1-en_us.json', encoding='UTF-8')
+    card_data = json.load(card_json)
+
+    for i in range(len(card_data)):
+        add_card(card_data[i]['cardCode'], card_data[i]['name'], card_data[i]['type'])
