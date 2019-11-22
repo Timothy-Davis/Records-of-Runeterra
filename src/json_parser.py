@@ -50,7 +50,7 @@ def check_game_state():
         if game_result:
             for i in range(len(deck)):
                 dbUpdate.update_card(deck[i][2:], 'games_won')
-            dbUpdate.update_user(summoner, "total_wins")
+            dbUpdate.update_user(summoner, "wins")
             dbUpdate.update_deck(deck_code, "wins")
 
         else:
