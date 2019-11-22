@@ -1,0 +1,2 @@
+mysql-connector==2.2.9
+urllib3==1.25.7
