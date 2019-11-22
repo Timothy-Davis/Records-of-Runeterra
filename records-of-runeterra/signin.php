@@ -2,13 +2,13 @@
 //signin.php
 include 'connect.php';
 include 'header.php';
- 
+
  echo "<img src='Pictures/Login.png' style='padding-top: 2%; display: block; padding-bottom:1%; margin: auto; width: 50%'>";
  
 //first, check if the user is already signed in. If that is the case, there is no need to display this page
 if(isset($_SESSION['signed_in']) && $_SESSION['signed_in'] == true)
 {
-    echo 'You are already signed in, you can <a href="signout.php">sign out</a> if you want.';
+    echo '<div style="color: whitesmoke; font-size: 25; text-align: center">You are already signed in, you can <a href="signout.php">sign out</a> if you want.</div>';
 }
 else
 {
@@ -73,7 +73,7 @@ else
                         user_name,
                         user_level
                     FROM
-                        users
+                        ror_forum_users
                     WHERE
                         user_name = '" . mysqli_real_escape_string($conn, $_POST['user_name']) . "'
                     AND
@@ -107,7 +107,8 @@ else
                         $_SESSION['user_name']  = $row['user_name'];
                         $_SESSION['user_level'] = $row['user_level'];
                     }
-                     
+                    
+                    
                     echo '<div class="signinproceed"> Welcome, ' . $_SESSION['user_name'] . '!',' <div class="signinproceed" style="margin-bottom: 5%"><a href="threads.php">Enter Forums and Connect<br> with the Community Here!</a></div></div>.';
                 }
             }

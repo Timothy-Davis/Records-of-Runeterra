@@ -3,7 +3,7 @@
 $server = 'localhost';
 $username   = 'tim';
 $password   = 'a';
-$database   = 'forumtest';
+$database   = 'ror_forum';
  
 $conn = new mysqli($server, $username, $password, $database);
 

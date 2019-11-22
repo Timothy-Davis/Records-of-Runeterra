@@ -114,35 +114,6 @@ a:hover {
     text-decoration: underline;
     text-decoration-color: whitesmoke;
 }
-            
-.container {
-    width: 85%;
-    margin-left: 7.5%;
-    margin-right: 7.5%;
-    background: url(Pictures/darkBG.jpg);
-}
-
-ul {
-}
-
-li {
-    display: inline;
-    font-family: dustismo_romanregular;
-}
-
-li a{
-    color: whitesmoke;
-    font-size: 30px;
-    padding: 18px
-}
-
-li a:visited, li a:link {
-    text-decoration: none;
-}
-
-li a:hover{
-    background-color:#1f1f1f;
-}
 
 .nohov:hover{
     background-color: black;
@@ -269,15 +240,256 @@ li a:hover{
     text-decoration: none;
     font-family: dustismo_romanregular;
     pointer-events: none;
-    text-align: center;
-    width: 100%;
-    background: url(Pictures/lightBG.jpg);
     padding-top: 12px;
-    padding-bottom: 12px;
+    padding-bottom: 3px;
+    bottom: 2px;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+------------------------------------------------------------------------
+
+forumbody {
+    margin-bottom: 10%;
+    margin: 0px;
+    background: url(Pictures/lightBG.jpg)        
+}
+ 
+#wrapper {
+    width: 100%;
+    margin: 0 auto;             /* center the page */
+}
+ 
+#content {
+    float: left;
+    font-family: dustismo_roman;
+    text-align: left;
+    width: 100%;                /* fill up the entire div */
+    background: url(Pictures/darkBG.jpg);
+}
+ 
+#menu {
+    float: left;
+    border: 1px solid #000;
+    border-bottom: none;        /* avoid a double border */
+    clear: both;                /* clear:both makes sure the content div doesn't float next to this one but stays under it */
+    width:100%;
+    height:20px;
+    padding: 0 30px;
+    background-color: #FFF;
+    text-align: left;
+    font-size: 85%;
+}
+ 
+#menu a:hover {
+    background-color: #009FC1;
+}
+ 
+#userbar {
+    background-color: black;
+    float: right;
+    width: 250px;
+}
+ 
+#footer {
+    clear: both;
+}
+ 
+/* begin table styles */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+ 
+table a {
+    color: whitesmoke;
+}
+ 
+table a:hover {
+    color:#DADADA;
+    text-decoration: none;
+}
+ 
+th {
+    background-color: #B3B3B3;
+    color: black;
+}
+ 
+td {
+    padding: 5px;
+    color: whitesmoke;
+}
+ 
+/* Begin font styles */
+h1, #footer {
+    font-family: dustismo_roman;
+    color: whitesmoke;
+}
+ 
+h3 {margin: 0; padding: 0;color: whitesmoke;}
+ 
+/* Menu styles */
+.item {
+    background-color: #00728B;
+    border: 1px solid #032472;
+    color: #FFF;
+    font-family: Arial;
+    padding: 3px;
+    text-decoration: none;
+}
+ 
+.leftpart {
+    width: 90%;
+	text-align: center;
 }
 
+.rightpart {
+    width: 10%;
+	text-align: center;
+}
+ 
+.small {
+    font-size: 75%;
+    color: #373737;
+}
+#footer {
+    font-size: 65%;
+    padding: 3px 0 0 0;
+}
+ 
+.topic-post {
+    height: 100px;
+    overflow: auto;
+}
+ 
+.post-content {
+    padding: 30px;
+}
+ 
+textarea {
+    width: 32.55%;
+    height: 23.14%;
+}
 
+.text{
+    width: 10.47%;
+    height: 22px;
+}
 
+.goodtext{
+    font-size: 25px;
+    font-family: dustismo-regular;
+    color: whitesmoke;
+}
+
+body {
+    margin-bottom: 10%;
+    margin: 0px;
+    background: url(Pictures/lightBG.jpg);
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 85%;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    background: url(Pictures/darkBG.jpg);
+}
+
+@font-face {
+    font-family: 'dustismo_romanregular';
+    src: url('Fonts/dustismo_roman.woff2') format('woff2'),
+         url('Fonts/dustismo_roman.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.title {
+    text-align: center;
+    font-size: 70;
+    font-family: dustismo_romanregular;
+    padding: 1px;
+    margin-top: 26.9px;
+}   
+
+.header{
+    padding: 1px;
+    text-align: center;
+    background: url("Pictures/title_bar_img.jpg");
+    color: whitesmoke;
+    font-size: 30px;    
+    margin-left: -15%;
+    margin-right: -15%;
+}
+
+ul {
+    margin-bottom: 0px;
+    pointer-events:auto;
+}
+
+li {
+    display: inline;
+    font-family: dustismo_romanregular;
+}
+
+li a{
+    color: whitesmoke;
+    font-size: 30px;
+    padding: 18px;
+}
+
+li a:visited, li a:link {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+li a:hover{
+    background-color:#1f1f1f;
+}
+
+.myButton {
+	box-shadow:inset 0px 0px 0px -50px #ffffff;
+	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	background-color:#ededed;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:#1f1f1f;
+	font-family:dustismo_roman;
+	font-size:20px;
+	font-weight:bold;
+	padding:5px 15px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #ffffff;
+}
+
+.myButton:hover {
+	background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+	background-color:#dfdfdf;
+}
+
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.signinproceed{
+    color: whitesmoke; 
+    font-size: 50;
+    text-align: center;
+    margin-top: 5%;
+}
+
+singinproceed a:visited, signinproceed a:link{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+a {
+    color: whitesmoke;
+}
 
 
 

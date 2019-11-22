@@ -1,59 +1,28 @@
-<html>
-    <head>
-        <title>Records of Runeterra</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    
-    <!-- This div wraps the entire body of the webpage -->
-        <body>     
-            <div class="container">           
+<?php
+//index.php
+include 'connect.php';
+include 'header.php';
             
-            <!-- Div for the Header -->
-            <div class="header">
-                <h1 class="title">Records of Runeterra</h1>
-            </div>
+            //<!-- Updates -->
+            echo '<img src="Pictures/Updates.png" style="display: block; margin: auto; padding-top: 2%; padding-bottom: 50px; width: 20%">
             
-            
-            <!-- Navigation bar elements -->
-            <ul class="nav">
-                <li><a href="Index.php">Home</a></li>
-                <li><a href="threads.php">Forums</a></li>
-                <li><a href="friends.php">Friends</a></li>
-                <li><a href="records.php">Records</a></li>
-                <li><a href="Analytics.php">Analytics</a></li>
-            </ul>
-            <ul class="nav" style="margin-top: -6.1%; margin-bottom: 6.1%; background-color: transparent; width: 276.1px; float: right; margin-right: -9%">
-                <li><a href="signin.php">Sign In</a></li>
-                <li><a href="signup.php">Sign Up</a></li>
-            </ul>
-            
-            <!-- Updates -->
-            <img src="Pictures/Updates.png" style="display: block; margin: auto; padding-bottom: 50px; width: 20%">
-            
-            
-            <!-- The following div contains all elements for the records sidebar -->
             <div class="Records">
-                <img src="Pictures/Records.png" style="display: block; margin: auto; padding-bottom: 30px; width: 90%">
-                
-                <?php
+                <img src="Pictures/Records.png" style="display: block; margin: auto; padding-bottom: 30px; width: 90%">';
+    
                 // The following PHP script will fill the records column of our side bar with values from the 
                 // database.
                 $servername = "127.0.0.1";
                 $username = "tim";
                 $password = "a";
                 $dbname = "rordb";
-
                 // Create connection
                 $conn = new mysqli($servername, $username, $password, $dbname);
-
                 // Check connection
                 if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
                 }
-
                 $sqlRecs = "SELECT recordName FROM ror_records";
                 $allRecs = $conn->query($sqlRecs);
-
                 if ($allRecs->num_rows > 0) {
                     // output data of each row
                     while($recRow = $allRecs->fetch_assoc()) {
@@ -82,8 +51,9 @@
                 } else {
                     echo "0 results";
                 }
-                $conn->close(); ?>
-            </div>
+                $conn->close();
+                echo '</div>'
+                ?>
             
             
             <!-- Div for the first stream -->

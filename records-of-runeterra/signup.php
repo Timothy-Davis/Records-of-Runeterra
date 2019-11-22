@@ -10,7 +10,7 @@ include 'header.php';
     {
         /*the form hasn't been posted yet, display it
           note that the action="" will cause the form to post to the same page it is on */
-        echo '<form method="POST" action="" style="background-color:transparent; color:whitesmoke">
+        echo '<form method="POST" action="" style="background-color:transparent; color:whitesmoke; height: 10000">
                 <div style="margin-right: 32%; padding-top: 4%; text-align: center">
                     Username:
                 </div>
@@ -101,7 +101,7 @@ include 'header.php';
             $pass = sha1($_POST['user_pass']);
             $email = $_POST['user_email'];
 
-            $sql = "INSERT INTO users(user_name, user_pass, user_email, user_level) 
+            $sql = "INSERT INTO ror_forum_users(user_name, user_pass, user_email, user_level) 
             VALUES('$name', '$pass', '$email', 0)";
 
             $result = mysqli_query($conn, $sql);

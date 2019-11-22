@@ -1,24 +1,16 @@
-<html>
-    <head>
-        <title>Records of Runeterra</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <h1 class="title">Records of Runeterra</h1>
-            </div>
-            <ul class="nav">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="threads.php">Forums</a></li>
-                <li><a href="friends.php">Friends</a></li>
-                <li><a href="records.php">Records</a></li>
-                <li><a href="Analytics.php">Analytics</a></li>
-            </ul>
-            <ul class="nav" style="margin-top: -6.1%; margin-bottom: 6.1%; background-color: transparent; width: 276.1px; float: right; margin-right: -9%">
-                <li><a href="signin.php">Sign In</a></li>
-                <li><a href="signup.php">Sign Up</a></li>
-            </ul>
-        </div>
-    </body>
-</html>
+<?php
+//index.php
+include 'connect.php';
+include 'header.php';
+echo '<div style="color:whitesmoke; text-align:center; font-size: 35; margin-top:2%; margin-bottom:2%; line-height: 50px">
+	This page would have all of the records<br>
+	if we were better and faster at programming.<br>
+	This page would include records such as "Hardest Hitters" and <br>
+	"Most Consecutive Expidition Wins" and many, many more. We thought it<br>
+	would be cool to have these records because it could bring another<br>
+	level of competitiveness to the game. You could try and beat your friend\'s<br>
+	records or even try to get #1 in your region or even the world.<br>
+	Things like this tend to make games a little more interesting in our opinion.
+	</div>';
+include 'footer.php';
+?>
