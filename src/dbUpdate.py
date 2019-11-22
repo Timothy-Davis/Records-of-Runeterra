@@ -89,8 +89,8 @@ def add_card(card_id, card_name, card_type):
     database = connect_to_db()
     my_cursor = database.cursor()
 
-    sql = "INSERT INTO ror_cards(cardID, cardName, gamesPlayed, cardType, gamesWon, expeditionGames, expeditionWins) " \
-          "VALUES (%s, %s, %s, 0, 0, 0, 0)"
+    sql = "INSERT INTO ror_cards(cardID, cardName, gamesPlayed, cardType, gamesWon, expeditionGames, expeditionWins, " \
+          "win_rate) VALUES (%s, %s, %s, 0, 0, 0, 0, 0)"
     values = (card_id, card_name, card_type)
     my_cursor.execute(sql, values)
 
@@ -148,7 +148,7 @@ def add_deck(deck_code):
     database = connect_to_db()
     my_cursor = database.cursor()
 
-    sql = "INSERT INTO ror_decks(deckString, wins, totalGames) VALUES (%s, 0, 0)"
+    sql = "INSERT INTO ror_decks(deckString, wins, totalGames, win_rate) VALUES (%s, 0, 0, 0)"
     values = (deck_code,)
     my_cursor.execute(sql, values)
 
@@ -196,10 +196,39 @@ def check_cards():
     database = connect_to_db()
     my_cursor = database.cursor()
 
-    my_cursor.execute("DELETE FROM cards")
-
     card_json = open('C:/datadragon-set1-en_us/en_us/data/set1-en_us.json', encoding='UTF-8')
     card_data = json.load(card_json)
 
     for i in range(len(card_data)):
-        add_card(card_data[i]['cardCode'], card_data[i]['name'], card_data[i]['type'])
+        sql = "SELECT * FROM ror_cards WHERE cardID = %s"
+        val = (card_data[i]['cardCode'],)
+        my_cursor.execute(sql, val)
+        if my_cursor.fetchone() is None:
+            add_card(card_data[i]['cardCode'], card_data[i]['name'], card_data[i]['type'])
+        else:
+            continue
+
+
+def update_winrate():
+    database = connect_to_db()
+    my_cursor = database.cursor()
+    my_cursor2 = database.cursor()
+
+    my_cursor.execute('SELECT * FROM ror_cards')
+    result = my_cursor.fetchall()
+    for row in result:
+        wins = row[4]
+        games = row[3]
+        if games != 0:
+            win_rate = (wins/games)*100
+            my_cursor.execute("UPDATE ror_cards SET win_rate = %s WHERE cardID = %s", (win_rate, row[0]))
+            database.commit()
+
+    my_cursor.execute('SELECT * FROM ror_decks')
+    result = my_cursor.fetchall()
+    for row in result:
+        print(row)
+
+
+if __name__ == "__main__":
+    update_winrate()
