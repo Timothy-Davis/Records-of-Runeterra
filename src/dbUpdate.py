@@ -244,12 +244,14 @@ def update_playrate():
         plays = row[2]
         if plays!=0:
             my_cursor.execute("UPDATE ror_decks SET play_rate = %s", (plays/total_games),)
+
     my_cursor.execute("SELECT * FROM ror_cards")
     result = my_cursor.fetchall()
     for row in result:
         plays = row[3]
         if plays != 0:
             my_cursor.execute("UPDATE ror_cards SET play_rate = %s", (plays/total_games),)
+
 
 if __name__ == "__main__":
     update_winrate()
